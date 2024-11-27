@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navsec {
+            background-color: white;
+            z-index: 1000;
+            position: relative;
+        }
+
+        nav {
+            background-color: rgb(25, 25, 26);
+            display: flex;
+            justify-content: space-between; /* Proper alignment of items */
+            align-items: center; /* Vertically center logo and nav items */
+            padding: 0 16px;
+        }
+
+        .logo {
+            padding: 8px;
+        }
+
+        .nav-items {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            padding: 8px;
+        }
+
+        li a {
+            display: block;
+            text-decoration: none;
+            color: rgb(253, 250, 250);
+            text-align: center;
+            padding: 6px 8px;
+        }
+
+        li a:hover {
+            background-color: rgb(150, 153, 153);
+        }
+
+        .hero {
+            background-image: url('bg2.jpg');
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .features {
+            background-image: url('mainbg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 193, 7, 0.8); /* Yellow background */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+            color: white; /* White text color */
+        }
+
+        .feature-card h2 {
+            margin: 0;
+            font-family: 'Arial Black', sans-serif; /* Bold font */
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .feature-card {
+                width: 90%;
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-card {
+                width: 80%;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="navsec">
+            <nav>
+                <div class="logo"> 
+                    <img src='logo.png' alt='logo' width="100" height="35">
+                </div>
+                <ul class="nav-items">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="more.html">More</a></li> 
+                </ul>
+            </nav>
+        </section>
+
+        <div class="hero">
+            <p>Analytics</p>
+        </div>
+
+        <section class="features">
+            <h1 style="color: white;">Analyze Your Data</h1>
+            <div class="feature-card">
+                <h2>Data Insights</h2>
+                <p>Get valuable insights from your data.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Visual Reports</h2>
+                <p>Visualize your progress with detailed reports.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Make Informed Decisions</h2>
+                <p>Use analytics to guide your decisions.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
