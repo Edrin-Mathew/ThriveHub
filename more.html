@@ -8,53 +8,48 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            
         }
+
         .navsec {
             background-color: white;
             z-index: 1000;
             position: relative;
         }
-        nav{
-    background-color: rgb(25, 25, 26);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-}
 
-.logo
-{
-    padding: 8px;
-    
-}
+        nav {
+            background-color: rgb(25, 25, 26);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+        }
 
-.nav-items {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-li{
-    padding: 8px;
-}
-li a{
-    display: block;
-    text-decoration: none;
-    color: rgb(253, 250, 250);
-    text-align: center;
-    padding: 6px 8px;
-    
+        .logo {
+            padding: 8px;
+        }
 
-}
-li a:hover{
-    background-color: rgb(150, 153, 153);
-}
+        .nav-items {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
 
-.nav{
-    justify-content: left;
-    align-items: left;
-}
+        li {
+            padding: 8px;
+        }
+
+        li a {
+            display: block;
+            text-decoration: none;
+            color: rgb(253, 250, 250);
+            text-align: center;
+            padding: 6px 8px;
+        }
+
+        li a:hover {
+            background-color: rgb(150, 153, 153);
+        }
 
         .hero {
             background-image: url('mainbg.jpg');
@@ -66,11 +61,11 @@ li a:hover{
             text-align: center;
             font-size: 2em;
         }
+
         .features {
             background-image: url('secbg.jpg');
             background-size: cover;
             background-position: center;
-            ```html
             padding: 50px 0;
             display: flex;
             justify-content: center;
@@ -78,6 +73,7 @@ li a:hover{
             flex-direction: column;
             height: 100vh;
         }
+
         .feature-card {
             background-color: rgba(40, 167, 69, 0.8); 
             border-radius: 8px;
@@ -89,19 +85,26 @@ li a:hover{
             transition: transform 0.3s ease;
             color: white; 
         }
+        .features h1{
+            color: aliceblue;
+        }
+
         .feature-card h2 {
             margin: 0;
             font-family: 'Arial Black', sans-serif; 
         }
+
         .feature-card:hover {
             transform: scale(1.05);
         }
+
         @media (max-width: 768px) {
             .feature-card {
                 width: 90%;
                 margin: 10px;
             }
         }
+
         @media (max-width: 480px) {
             .feature-card {
                 width: 80%;
@@ -111,20 +114,18 @@ li a:hover{
     </style>
 </head>
 <body>
-
     <main>
         <section class="navsec">
-            <div class="nav">
-                <nav>
-                    <div class="logo"> <img src='logo.png' alt='logo' width="100" height="35"></div>
-                    <ul class="nav-items">
-                        <li><a href="homepage.html">Home</a></li>
-                        <li><a href="signup.html">SignUp</a></li>
-                        <li><a href="more.html">More</a></li> 
-                    </ul>
-                </nav>
-            ```html
-            </div>
+            <nav>
+                <div class="logo"> 
+                    <img src='logo.png' alt='logo' width="100" height="35">
+                </div>
+                <ul class="nav-items">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="more.html">More</a></li> 
+                </ul>
+            </nav>
         </section>
 
         <div class="hero">
@@ -132,7 +133,7 @@ li a:hover{
         </div>
 
         <section class="features">
-            <h1 style="color: #333;">Explore More</h1>
+            <h1>Explore More</h1>
             <div class="feature-card">
                 <h2>Task Management</h2>
                 <p>Organize and prioritize your tasks effortlessly.</p>
@@ -147,6 +148,5 @@ li a:hover{
             </div>
         </section>
     </main>
-    
 </body>
 </html>
