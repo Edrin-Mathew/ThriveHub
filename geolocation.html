@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2dec33;
+        }
+
+        .location {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get Your Current Location</h1>
+        <p>Fetching Your Location helps us improve our services, track and suggest activities efficiently.</p> <br>
+        <p>Click on the button below to get your current location, and click allow to help us access.</p>
+        <button onclick="getLocation()">Get Location</button>
+        <div id="output" class="location"></div>
+    </div>
+
+    <script>
+        function getLocation() {
+            const output = document.getElementById('output');
+
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        output.innerHTML = `
+                            <p><strong>Latitude:</strong> ${latitude}</p>
+                            <p><strong>Longitude:</strong> ${longitude}</p>
+                        `;
+                    },
+                    (error) => {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                output.innerHTML = "Permission denied. Please allow location access.";
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                output.innerHTML = "Location information is unavailable.";
+                                break;
+                            case error.TIMEOUT:
+                                output.innerHTML = "The request to get your location timed out.";
+                                break;
+                            default:
+                                output.innerHTML = "An unknown error occurred.";
+                                break;
+                        }
+                    }
+                );
+            } else {
+                output.innerHTML = "Geolocation is not supported by your browser."; //not supported
+            }
+        }
+    </script>
+</body>
+</html>
