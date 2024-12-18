@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #191528,#3c162f,#5c162e, #7c162e);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+       
+        .parallax-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1, h2, p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .header-section {
+            background-image: url('mainbg.jpg'); 
+        }
+
+        .carousel-container {
+            margin: 50px auto;
+            max-width: 1200px;
+        }
+
+        .carousel-inner img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-caption h5 {
+            font-size: 2rem;
+            color: #ff9800;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .slogan-section {
+            background-image: url('bg2.jpg');
+        }
+
+        .slogan-section h2 {
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+
+        .parallax-card {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+        }
+
+        .parallax-content {
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .parallax-card h3 {
+            font-size: 2.5rem;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .parallax-card p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .parallax-card {
+                min-height: 40vh;
+            }
+
+            h1, h2 {
+                font-size: 2rem;
+            }
+
+            .parallax-card h3 {
+                font-size: 2rem;
+            }
+
+            .parallax-card p {
+                font-size: 1rem;
+            }
+        }
+        footer {
+    background: #222;
+    color: #ddd;
+    padding: 40px 0;
+}
+
+footer a:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+   
+    <div class="parallax-section header-section">
+        <div class="gradient-overlay"></div>
+        <div class="content">
+            <h1>Welcome to Our Community</h1>
+            <p>A space where ideas flourish, connections thrive, and we work together for a <span style="color: #ff9800;">better tomorrow</span>.</p>
+        </div>
+    </div>
+
+    <section class="carousel-container" id="carouselSection">
+        <div id="websiteCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="banner1.jpg" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Welcome to Task Manager</h5>
+                        <p>Streamline your tasks with efficiency and ease.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="herobg2.jpg" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Organize Like Never Before</h5>
+                        <p>Take control of your time and priorities.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="mainbg.jpg" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Track Your Progress</h5>
+                        <p>Stay on top of your goals and deadlines.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#websiteCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#websiteCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <div id="sloganSection" class="parallax-section slogan-section">
+        <div class="gradient-overlay"></div>
+        <div class="content">
+            <h2>"Together, we rise by lifting each other."</h2>
+            <h2>"Every voice matters, every action counts."</h2>
+            <h2>"We thrive when we care, connect, and collaborate."</h2>
+        </div>
+    </div>
+
+    <section>
+        <div id="valuesSection"  class="parallax-card" style="background-image: url('secbg.jpg');">
+            <div class="parallax-content">
+                <h3>Connection</h3>
+                <p>Building bridges, not walls. We foster meaningful relationships to create a supportive network.</p>
+            </div>
+        </div>
+        <div class="parallax-card" style="background-image: url('bg1.jpg');">
+            <div class="parallax-content">
+                <h3>Growth</h3>
+                <p>Empowering each individual to reach their potential and achieve greatness through collaboration.</p>
+            </div>
+        </div>
+        <div class="parallax-card" style="background-image: url('bg2.jpg');">
+            <div class="parallax-content">
+                <h3>Mindfulness</h3>
+                <p>Encouraging balance, self-awareness, and intentional living to nurture our community and ourselves.</p>
+            </div>
+        </div>
+    </section>
+ 
+
+
+
+<footer class="bg-dark text-white pt-4">
+    <div class="container text-center text-md-start">
+        <div class="row">
+            
+            <div class="col-md-4 mb-3">
+                <h5>About Our Community</h5>
+                <p>
+                    A space where ideas flourish, connections thrive, and we work together for a better tomorrow.
+                </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#carouselSection" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="#valuesSection" class="text-white text-decoration-none">Our Values</a></li>
+                    <li><a href="#sloganSection" class="text-white text-decoration-none">Slogan</a></li>
+                    <li><a href="#contactSection" class="text-white text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <h5>Connect With Us</h5>
+                <a href="https://www.facebook.com" class="text-white me-2" target="_blank">
+                    <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+                </a> &nbsp; &nbsp; 
+                
+                <a href="https://twitter.com/yourprofile" class="text-white me-2" target="_blank">
+                    <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+                </a> &nbsp; &nbsp; 
+                
+                <a href="https://www.instagram.com/yourprofile" class="text-white me-2" target="_blank">
+                    <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+                </a> &nbsp; &nbsp; 
+                
+                <a href="https://www.linkedin.com/in/yourprofile" class="text-white me-2" target="_blank">
+                    <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="row text-center mt-3">
+            <div class="col">
+                <p class="mb-0">&copy; 2024 ThriveHub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+   
+
+
+</footer>
+
+
+</body>
+</html>
