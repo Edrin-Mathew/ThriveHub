@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - ThriveHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0d1b2a, #1b263b, #415a77, #778da9, #e0e1dd);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 50px;
+            width: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, select, button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #00b7ff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0045e6;
+        }
+
+        #taskList {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Task Manager</h2>
+        
+        <h4>Create a New Task</h4>
+        <input type="text" id="taskName" placeholder="Enter Task Name">
+        <select id="priority">
+            <option value="Low">Low Priority</option>
+            <option value="Medium">Medium Priority</option>
+            <option value="High">High Priority</option>
+        </select>
+        <input type="date" id="deadline">
+        <button onclick="createTask()">Create Task</button>
+
+        <hr>
+
+        <h4>Task List</h4>
+        <button onclick="fetchTasks()">Fetch Tasks</button>
+        <div id="taskList">Task details will be displayed here...</div>
+    </div>
+
+    <script>
+function createTask() {
+    var taskName = document.getElementById("taskName").value;
+    var priority = document.getElementById("priority").value;
+    var deadline = document.getElementById("deadline").value;
+
+    if (taskName === "" || deadline === "") {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "createTask.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            alert(xhr.responseText); 
+            fetchTasks(); 
+        }
+    };
+
+    var data = "taskName=" + encodeURIComponent(taskName) + "&priority=" + encodeURIComponent(priority) + "&deadline=" + encodeURIComponent(deadline);
+    xhr.send(data);
+}
+
+function fetchTasks() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "fetchTasks.php", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            document.getElementById("taskList").innerHTML = xhr.responseText;
+        }
+    };
+
+    xhr.send();
+}
+
+window.onload = fetchTasks;
+
+    </script>
+</body>
+</html>
